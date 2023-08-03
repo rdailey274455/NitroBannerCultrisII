@@ -1,7 +1,7 @@
 # NitroBannerCultrisII
 Mockup of [Cultris II](https://gewaltig.net) background made in GameMaker, intended for use as my Discord Nitro profile banner
 ---
-![](https://i.imgur.com/ISV4Srd.gif | width=340)
+<img src="https://i.imgur.com/ISV4Srd.gif" alt="animated preview" width="200"/>
 ---
 WASD : move\
 E : elevate\
