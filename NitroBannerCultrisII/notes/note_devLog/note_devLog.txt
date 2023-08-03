@@ -1,0 +1,25 @@
+2023-08-02
++ scr_general rotate2Dvector(), reRange()
++ obj_demo Create, Step, Draw
+	+ fakeCam, quick and dirty movement, render axes
+> altitude looking is fucked, no pincushion perspective warping
+> lateral has some sort of backwards going on, horizontal turning
+	feels wrong and movement feels wrong too after turning away
+	from zero degrees
+
+
+
+2023-08-02 afternoon
+* solution to backwards horizontal aim turning: negative the y
+	on the way in to rotate2Dvector(), negative it again after
+	it comes out, see comment in scr_general
+* solution to fucked up vertical aim turning: rewrite rotatey
+	transformation in fakeCam.project() to do the same proper
+	usage of rotate2Dvector() twice, once on XY then on XZ, no
+	need for birdsEyeMagnitude or even the "To" 3D coordinate
+- fakeCam.xTo,yTo,zTo,birdsEyeMagnitude,updateAim()
+> behind-cam culling still needs to be implemented, which adds
+	complication as it takes into consideration geometry between
+	lone points (currently the fakeCam is not smart enough to
+	deal with anything more advanced than lone points)
+> math can probably be concise-ified

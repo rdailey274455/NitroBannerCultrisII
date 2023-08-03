@@ -1,0 +1,42 @@
+birdsEyeMagnitude = sqrt(sqr(xTo - xFrom) + sqr(yTo - yFrom));
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// y is negative'd to accomodate for mathematical axis orientation of rotate2Dvector(), outside that function we are using computer axis orientation
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+show_message(string(rotate2Dvector(1, 1, 45)));  // gives the correct answer in a mathy X+ is east Y+ is north axis orientation
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// lock rotation of point and cam relative to each other, force cam to aim due east by rotation of both
+var _xyRotated = rotate2Dvector(_x, -_y, -azimuth);
+var _aimzRotated = rotate2Dvector(birdsEyeMagnitude, -_z, -altitude);
+_x = _xyRotated.x;
+_y = -_xyRotated.y;
+_z = -_aimzRotated.y;
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// this is terrible because it obligates me to know when to call it but it's quick to write and eliminates repeated calculations
+updateAim = function()
+	{
+	birdsEyeMagnitude = point_distance(xFrom, yFrom, xTo, yTo);
+	altitude = darctan2(zTo - zFrom, birdsEyeMagnitude);
+	azimuth = point_direction(xFrom, yFrom, xTo, yTo);
+	};
+updateAim();
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	"To = " + string(fakeCam.xTo) + ", " + string(fakeCam.yTo) + ", " + string(fakeCam.zTo) + "\n" +
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+for (var _clmn = terrain_w - 1; _clmn >= 0; --_clmn)
+	{
+	for (var _row = terrain_l - 1; _row >= 0; --_row)
+		{
+		terrain[_row, _clmn] = 0;
+		}
+	}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			if (is_undefined(_p))
+				{
+				_p = terrain_projected[_rowI][_clmnI];
+				}
+			else  // we've moved east one unit, old east is new rightHere
+				{
+				_p = _pEast;
+				}  
+			_pEast = terrain_projected[_rowI][_clmnI + 1];
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

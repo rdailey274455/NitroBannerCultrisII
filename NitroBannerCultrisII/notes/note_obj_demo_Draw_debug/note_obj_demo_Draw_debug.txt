@@ -1,0 +1,30 @@
+var _p000 = fakeCam.project(0, 0, 0);
+var _p100 = fakeCam.project(64, 0, 0);
+var _p010 = fakeCam.project(0, 64, 0);
+var _p001 = fakeCam.project(0, 0, 64);
+var _p200 = fakeCam.project(72, 0, 0);
+var _p020 = fakeCam.project(0, 72, 0);
+var _p002 = fakeCam.project(0, 0, 72);
+
+draw_set_color(c_white);
+
+draw_arrow(_p000.x, _p000.y, _p100.x, _p100.y, 12);
+draw_arrow(_p000.x, _p000.y, _p010.x, _p010.y, 12);
+draw_arrow(_p000.x, _p000.y, _p001.x, _p001.y, 12);
+
+draw_set_font(fnt_debug0);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+draw_text(_p200.x, _p200.y, "X+");
+draw_text(_p020.x, _p020.y, "Y+");
+draw_text(_p002.x, _p002.y, "Z+");
+
+draw_set_color(c_lime);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+var _debugText =
+	"From = " + string(fakeCam.xFrom) + ", " + string(fakeCam.yFrom) + ", " + string(fakeCam.zFrom) + "\n" +
+	"azim = " + string(fakeCam.azimuth) + "\n" +
+	"alti = " + string(fakeCam.altitude);
+draw_text(0, 0, _debugText);
