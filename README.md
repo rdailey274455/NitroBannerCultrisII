@@ -5,6 +5,8 @@ Mockup of [Cultris II](https://gewaltig.net) background made in GameMaker, inten
 
 [animated preview](https://i.imgur.com/ISV4Srd.gif)
 
+![](https://github.com/rdailey274455/NitroBannerCultrisII/blob/main/wider.gif)
+
 ---
 
 WASD : move\
