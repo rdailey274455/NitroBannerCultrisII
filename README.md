@@ -3,7 +3,7 @@ Mockup of [Cultris II](https://gewaltig.net) background made in GameMaker, inten
 
 ---
 
-<img src="https://i.imgur.com/ISV4Srd.gif" alt="animated preview" width="200"/>
+![](https://i.imgur.com/ISV4Srd.gif)
 
 ---
 
