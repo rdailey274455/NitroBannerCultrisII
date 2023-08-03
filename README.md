@@ -7,10 +7,12 @@ Mockup of [Cultris II](https://gewaltig.net) background made in GameMaker, inten
 
 ---
 
-WASD : move\
-E : elevate\
-Q : fall (as in quicksand)\
-F : fullscreen toggle\
-←↓↑→ : look around\
-numpad + : pump up the anti-aliasing\
-numpad - : pump down the anti-aliasing
+| key         | action                           |
+|------------:|:---------------------------------|
+| WASD        | move                             |
+| E           | elevate                          |
+| Q           | fall (as in quicksand)           |
+| F           | fullscreen toggle                |
+| ←↓↑→        | look around                      |
+| numpad +    | pump up the anti-aliasing        |
+| numpad -    | pump down the anti-aliasing      |
